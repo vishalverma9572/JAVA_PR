@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".TripDetailsActivity">
+
+    <!-- Display Trip Information -->
+    <TextView
+        android:id="@+id/tripNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Trip Name: Your Trip Name"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tripDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tripNameTextView"
+        android:layout_marginBottom="8dp"
+        android:text="Date: Your Trip Date" />
+
+    <TextView
+        android:id="@+id/tripDestinationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tripDateTextView"
+        android:layout_marginBottom="16dp"
+        android:text="Destination: Your Trip Destination" />
+
+    <!-- RecyclerView for Expenses -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expenseRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tripDestinationTextView"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/your_expense_list_item_layout" />
+
+    <!-- Options: Add Expense, Edit, Delete, and Total Expense -->
+    <Button
+        android:id="@+id/addExpenseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseRecyclerView"
+        android:layout_marginTop="16dp"
+        android:text="Add Expense"
+        android:onClick="onAddExpenseClick" />
+
+    <Button
+        android:id="@+id/editTripButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addExpenseButton"
+        android:layout_marginTop="8dp"
+        android:text="Edit"
+        android:onClick="onEditTripClick" />
+
+    <Button
+        android:id="@+id/deleteTripButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTripButton"
+        android:layout_marginTop="8dp"
+        android:text="Delete"
+        android:onClick="onDeleteTripClick" />
+
+    <TextView
+        android:id="@+id/totalExpenseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deleteTripButton"
+        android:layout_marginTop="16dp"
+        android:text="Total Expense: Your Total Expense" />
+
+</RelativeLayout>
